@@ -34,8 +34,13 @@ class Matriz:
             print(" ")
 
     def dimensiones(self):
-        """Devuelve las dimensiones de la matriz."""
-        pass
+        nfilas = self.nrows
+        ncolumnas = self.ncols
+        print(f"Dimensiones de la matriz: {nfilas} filas x {ncolumnas} columnas")
+        if nfilas != ncolumnas: 
+            print("La matriz no es cuadrada")
+        else:
+            print("La matriz es cuadrada")
 
     def sumar(self, otra_matriz):
         """Suma dos matrices."""
@@ -66,11 +71,19 @@ class Matriz:
         pass
 
     def generar_identidad(self, tamano):
-        """Genera una matriz identidad de tama~no n x n."""
-        pass
+        def generar_identidad(self, tamano):
+        if tamano <= 0:
+            print("El tamaño debe ser un entero positivo.")
+            return None
+
+        identidad = [[1 if i == j else 0 for j in range(tamano)] for i in range(tamano)]
+
+        print(f"Matriz identidad de tamaño {tamano}x{tamano} generada:")
+        for fila in identidad:
+            print(fila)
+        
+        return identidad
 
     def determinante(self):
         """Calcula el determinante de una matriz 3x3."""
         pass
-
-
