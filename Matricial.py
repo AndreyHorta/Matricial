@@ -26,7 +26,6 @@ class Matriz:
         self.ncols=ncols
         self.matriz=Filas.copy()
 
-
     def imprimir(self, decimales=2):
         for fila in self.matriz:
             for e in fila:
@@ -71,12 +70,20 @@ class Matriz:
         pass
 
     def generar_identidad(self, tamano):
-        def generar_identidad(self, tamano):
         if tamano <= 0:
             print("El tamaño debe ser un entero positivo.")
             return None
 
-        identidad = [[1 if i == j else 0 for j in range(tamano)] for i in range(tamano)]
+        identidad = []
+        for i in range(tamano):
+            fila = []
+            for j in range(tamano):
+                if i == j:
+                    fila.append(1)
+                else:
+                    fila.append(0)
+            identidad.append(fila)
+
 
         print(f"Matriz identidad de tamaño {tamano}x{tamano} generada:")
         for fila in identidad:
