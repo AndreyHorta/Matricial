@@ -35,7 +35,10 @@ class Matriz:
 
     def dimensiones(self):
         """Devuelve las dimensiones de la matriz."""
-        pass
+        nfilas = self.nrows
+        ncolumnas = self.ncols
+        
+        return (nfilas, ncolumnas)
 
     def sumar(self, otra_matriz):
         """Suma dos matrices."""
@@ -121,5 +124,43 @@ class Matriz:
     def determinante(self):
         """Calcula el determinante de una matriz 3x3."""
         pass
+    
+    
+    
+    def zeros(self, f, c):
+        """Genera una matriz de fxc con solo ceros"""
+        if f <=0 or c <=0:
+            print("El tamaño debe ser un entero positivo.")
+            return None
+
+        ceros = []
+        for i in range(f):
+            fila = []
+            for j in range(c):
+                fila.append(0)
+            ceros.append(fila)
+
+        self.nrows=f
+        self.ncols=c
+
+        self.matriz = ceros
+        
+    def unos(self, f, c):
+        """Genera una matriz de fxc con solo unos"""
+        if f <=0 or c <=0:
+            print("El tamaño debe ser un entero positivo.")
+            return None
+
+        unos = []
+        for i in range(f):
+            fila = []
+            for j in range(c):
+                fila.append(1)
+            ceros.append(fila)
+
+        self.nrows=f
+        self.ncols=c
+
+        self.matriz = unos
 
 
