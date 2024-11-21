@@ -40,8 +40,37 @@ class Matriz:
     def sumar(self, otra_matriz):
         """Suma dos matrices."""
         pass
+        if self.nrows != otra_matriz.nrows or self.ncols != otra_matriz.ncols:
+                return None  
+        
 
-    def multiplicar_escalar(self, escalar):
+        filas_resultado = []
+        for i in range(self.nrows):
+            fila_resultante = []
+            for j in range(self.ncols):
+                suma = self.matriz[i][j] + otra_matriz.matriz[i][j]  # Sumar los elementos
+                fila_resultante.append(suma)
+            filas_resultado.append(fila_resultante)
+
+        r = Matriz("[]")
+        r.matriz: filas_resultados
+        return r
+
+M = Matriz("[3 5 2;1 4 -8;-3 1 4]")
+
+
+B = Matriz("[1 2 3;4 5 6;7 8 9]")
+
+print("Matriz M:")
+M.imprimir()
+
+print("Matriz B:")
+B.imprimir()
+
+print("Suma de M y B:")
+C = M.imprimir(B)
+
+def multiplicar_escalar(self, escalar):
         if not self.matriz:
             #print("No se puede")
             return None
@@ -55,20 +84,19 @@ class Matriz:
     
     
 
-
-    def multiplicar_matriz(self, otra_matriz):
+def multiplicar_matriz(self, otra_matriz):
         """Multiplica dos matrices."""
         pass
 
-    def son_iguales(self, otra_matriz):
+def son_iguales(self, otra_matriz):
         """Verifica si dos matrices son iguales."""
         pass
 
-    def traza(self):
+def traza(self):
         """Calcula la traza de la matriz."""
         pass
 
-    def traspuesta(self):
+def traspuesta(self):
         """Devuelve la traspuesta de la matriz."""
         matriz1= self.matriz
         matriz2=[]
@@ -80,7 +108,7 @@ class Matriz:
         self.matriz=matriz2
 
 
-    def determinante_2x2(self):
+def determinante_2x2(self):
         """Calcula el determinante de una matriz 2x2."""
         # Extraer los elementos de la matriz
         a = matriz[0][0]
@@ -92,7 +120,7 @@ class Matriz:
         determinante=a*d-b*c
         return determinante
 
-    def generar_identidad(self, n:int):
+def generar_identidad(self, n:int):
         """Genera una matriz identidad de tama~no n x n."""
         # Creamos una lista vacía que contendrá las filas de la matriz
         matriz=[]
@@ -118,7 +146,7 @@ class Matriz:
             self.matriz=matriz
       
 
-    def determinante(self):
+def determinante(self):
         """Calcula el determinante de una matriz 3x3."""
         pass
 
